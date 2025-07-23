@@ -1,10 +1,10 @@
 "use client"
 
-import { useState } from "react"
-import Link from "next/link"
-import { ThemeToggle } from "@/components/theme-toggle"
 import { LanguageSwitcher } from "@/components/language-switcher"
-import { ChevronDown } from "lucide-react" // Ignoring type checks for this import
+import { ThemeToggle } from "@/components/theme-toggle"
+import { ChevronDown } from "lucide-react"; // Ignoring type checks for this import
+import Link from "next/link"
+import { useState } from "react"
 
 interface HeaderProps {
   dict: any
