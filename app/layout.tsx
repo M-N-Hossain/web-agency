@@ -1,24 +1,23 @@
-import type React from "react"
-import type { Metadata } from "next"
-import { Inter } from "next/font/google"
-import "./globals.css"
+"use client";
 
-const inter = Inter({ subsets: ["latin"] })
+import { Inter } from "next/font/google";
+import type React from "react";
+import { Toaster } from "react-hot-toast";
+import "./globals.css";
 
-export const metadata: Metadata = {
-  title: "WebAgency - Beautiful Websites Built for Success",
-  description: "We create stunning, responsive websites that help your business grow and succeed online.",
-    generator: 'v0.dev'
-}
+const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <Toaster />
+        {children}
+      </body>
     </html>
-  )
+  );
 }
