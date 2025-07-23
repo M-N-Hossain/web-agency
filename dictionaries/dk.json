@@ -1,0 +1,127 @@
+{
+  "nav": {
+    "home": "Hjem",
+    "about": "Om Os",
+    "services": "Tjenester",
+    "contact": "Kontakt",
+    "getStarted": "Kom I Gang",
+    "allServices": "Alle Tjenester"
+  },
+  "hero": {
+    "title": "Smukke Hjemmesider",
+    "titleHighlight": "Bygget til Succes",
+    "description": "Vi skaber fantastiske, responsive hjemmesider, der hjælper din virksomhed med at vokse og få succes online.",
+    "startProject": "Start Dit Projekt",
+    "viewServices": "Se Tjenester"
+  },
+  "services": {
+    "title": "Vores Tjenester",
+    "description": "Vælg den perfekte løsning til dine forretningsbehov",
+    "static": {
+      "title": "Statiske Hjemmesider",
+      "description": "Professionelle, hurtigindlæsende hjemmesider perfekte til virksomheder, der har brug for en stærk online tilstedeværelse.",
+      "features": ["Responsivt Design", "SEO Optimeret", "Hurtig Indlæsning", "Kontaktformularer"],
+      "price": "Fra $999",
+      "addons": "Tilføjelser:",
+      "management": "Site Management: $99/måned",
+      "support": "Support & Opdateringer: $49/måned"
+    },
+    "dynamic": {
+      "title": "Dynamiske Hjemmesider",
+      "description": "Skalerbare løsninger med indholdsstyringssystemer, der vokser med din virksomhed.",
+      "features": ["CMS Integration", "Bruger Autentificering", "Database Support", "Admin Dashboard"],
+      "price": "Fra $2,499",
+      "popular": "Populær"
+    },
+    "custom": {
+      "title": "Tilpassede Web Apps",
+      "description": "Skræddersyede webapplikationer bygget til at opfylde dine unikke forretningskrav.",
+      "features": ["Tilpasset Funktionalitet", "API Integrationer", "Avanceret Sikkerhed", "Performance Optimeret"],
+      "price": "Tilpasset Tilbud",
+      "requestQuote": "Anmod Om Tilbud"
+    },
+    "learnMore": "Lær Mere",
+    "whyChoose": "Hvorfor Vælge Os?",
+    "seoOptimized": {
+      "title": "SEO Optimeret",
+      "description": "Bygget med søgemaskineoptimering i tankerne for at hjælpe dig med at rangere højere."
+    },
+    "secure": {
+      "title": "Sikker & Pålidelig",
+      "description": "Virksomhedskvalitet sikkerhed og 99,9% oppetidsgaranti."
+    },
+    "support": {
+      "title": "24/7 Support",
+      "description": "Døgnets rundt support for at holde din hjemmeside kørende problemfrit."
+    }
+  },
+  "about": {
+    "title": "Om Os",
+    "description": "Vi er et passioneret team af webudviklere og designere dedikeret til at skabe exceptionelle digitale oplevelser.",
+    "story": {
+      "title": "Vores Historie",
+      "content1": "Grundlagt med en vision om at bygge bro mellem innovativt design og banebrydende teknologi, har vi hjulpet virksomheder med at etablere deres digitale tilstedeværelse i over 5 år.",
+      "content2": "Vores team kombinerer kreativitet med teknisk ekspertise for at levere hjemmesider og webapplikationer, der ikke kun ser fantastiske ud, men også præsterer exceptionelt godt."
+    },
+    "values": {
+      "title": "Vores Værdier",
+      "quality": {
+        "title": "Kvalitet Først",
+        "description": "Vi går aldrig på kompromis med kvalitet. Hvert projekt får vores fulde opmærksomhed på detaljer."
+      },
+      "client": {
+        "title": "Klient-Fokuseret",
+        "description": "Din succes er vores succes. Vi arbejder tæt sammen med dig for at opnå dine mål."
+      },
+      "innovation": {
+        "title": "Innovation",
+        "description": "Vi holder os foran kurven med de nyeste teknologier og designtrends."
+      }
+    }
+  },
+  "contact": {
+    "title": "Kontakt Os",
+    "description": "Klar til at starte dit projekt? Kontakt os i dag.",
+    "form": {
+      "title": "Send os en besked",
+      "description": "Udfyld formularen nedenfor, og vi vender tilbage til dig inden for 24 timer.",
+      "firstName": "Fornavn",
+      "lastName": "Efternavn",
+      "email": "Email",
+      "subject": "Emne",
+      "message": "Besked",
+      "messagePlaceholder": "Fortæl os om dit projekt...",
+      "send": "Send Besked"
+    },
+    "info": {
+      "title": "Kom i kontakt",
+      "description": "Vi er her for at hjælpe med dine webudviklingsbehov.",
+      "hours": "Åbningstider",
+      "monday": "Mandag - Fredag",
+      "saturday": "Lørdag",
+      "sunday": "Søndag",
+      "closed": "Lukket"
+    }
+  },
+  "footer": {
+    "description": "Skaber smukke, funktionelle hjemmesider, der hjælper virksomheder med at få succes online.",
+    "services": "Tjenester",
+    "company": "Virksomhed",
+    "support": "Support",
+    "links": {
+      "staticWebsites": "Statiske Hjemmesider",
+      "dynamicWebsites": "Dynamiske Hjemmesider",
+      "customWebApps": "Tilpassede Web Apps",
+      "websiteManagement": "Hjemmeside Management",
+      "aboutUs": "Om Os",
+      "contact": "Kontakt",
+      "privacy": "Privatlivspolitik",
+      "terms": "Servicevilkår",
+      "helpCenter": "Hjælpecenter",
+      "documentation": "Dokumentation",
+      "statusPage": "Status Side",
+      "getSupport": "Få Support"
+    },
+    "copyright": "© 2024 WebAgency. Alle rettigheder forbeholdes."
+  }
+}

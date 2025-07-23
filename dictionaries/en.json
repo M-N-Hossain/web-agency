@@ -1,0 +1,127 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "contact": "Contact",
+    "getStarted": "Get Started",
+    "allServices": "All Services"
+  },
+  "hero": {
+    "title": "Beautiful Websites",
+    "titleHighlight": "Built for Success",
+    "description": "We create stunning, responsive websites that help your business grow and succeed online.",
+    "startProject": "Start Your Project",
+    "viewServices": "View Services"
+  },
+  "services": {
+    "title": "Our Services",
+    "description": "Choose the perfect solution for your business needs",
+    "static": {
+      "title": "Static Websites",
+      "description": "Professional, fast-loading websites perfect for businesses that need a strong online presence.",
+      "features": ["Responsive Design", "SEO Optimized", "Fast Loading", "Contact Forms"],
+      "price": "From $999",
+      "addons": "Add-ons:",
+      "management": "Site Management: $99/month",
+      "support": "Support & Updates: $49/month"
+    },
+    "dynamic": {
+      "title": "Dynamic Websites",
+      "description": "Scalable solutions with content management systems that grow with your business.",
+      "features": ["CMS Integration", "User Authentication", "Database Support", "Admin Dashboard"],
+      "price": "From $2,499",
+      "popular": "Popular"
+    },
+    "custom": {
+      "title": "Custom Web Apps",
+      "description": "Tailored web applications built to meet your unique business requirements.",
+      "features": ["Custom Functionality", "API Integrations", "Advanced Security", "Performance Optimized"],
+      "price": "Custom Quote",
+      "requestQuote": "Request Quote"
+    },
+    "learnMore": "Learn More",
+    "whyChoose": "Why Choose Us?",
+    "seoOptimized": {
+      "title": "SEO Optimized",
+      "description": "Built with search engine optimization in mind to help you rank higher."
+    },
+    "secure": {
+      "title": "Secure & Reliable",
+      "description": "Enterprise-grade security and 99.9% uptime guarantee."
+    },
+    "support": {
+      "title": "24/7 Support",
+      "description": "Round-the-clock support to keep your website running smoothly."
+    }
+  },
+  "about": {
+    "title": "About Us",
+    "description": "We're a passionate team of web developers and designers dedicated to creating exceptional digital experiences.",
+    "story": {
+      "title": "Our Story",
+      "content1": "Founded with a vision to bridge the gap between innovative design and cutting-edge technology, we've been helping businesses establish their digital presence for over 5 years.",
+      "content2": "Our team combines creativity with technical expertise to deliver websites and web applications that not only look great but perform exceptionally well."
+    },
+    "values": {
+      "title": "Our Values",
+      "quality": {
+        "title": "Quality First",
+        "description": "We never compromise on quality. Every project receives our full attention to detail."
+      },
+      "client": {
+        "title": "Client-Focused",
+        "description": "Your success is our success. We work closely with you to achieve your goals."
+      },
+      "innovation": {
+        "title": "Innovation",
+        "description": "We stay ahead of the curve with the latest technologies and design trends."
+      }
+    }
+  },
+  "contact": {
+    "title": "Contact Us",
+    "description": "Ready to start your project? Get in touch with us today.",
+    "form": {
+      "title": "Send us a message",
+      "description": "Fill out the form below and we'll get back to you within 24 hours.",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email",
+      "subject": "Subject",
+      "message": "Message",
+      "messagePlaceholder": "Tell us about your project...",
+      "send": "Send Message"
+    },
+    "info": {
+      "title": "Get in touch",
+      "description": "We're here to help with your web development needs.",
+      "hours": "Business Hours",
+      "monday": "Monday - Friday",
+      "saturday": "Saturday",
+      "sunday": "Sunday",
+      "closed": "Closed"
+    }
+  },
+  "footer": {
+    "description": "Creating beautiful, functional websites that help businesses succeed online.",
+    "services": "Services",
+    "company": "Company",
+    "support": "Support",
+    "links": {
+      "staticWebsites": "Static Websites",
+      "dynamicWebsites": "Dynamic Websites",
+      "customWebApps": "Custom Web Apps",
+      "websiteManagement": "Website Management",
+      "aboutUs": "About Us",
+      "contact": "Contact",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service",
+      "helpCenter": "Help Center",
+      "documentation": "Documentation",
+      "statusPage": "Status Page",
+      "getSupport": "Get Support"
+    },
+    "copyright": "© 2024 WebAgency. All rights reserved."
+  }
+}
