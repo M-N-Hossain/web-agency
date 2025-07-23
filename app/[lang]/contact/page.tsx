@@ -1,10 +1,8 @@
-import Header from "@/components/header"
+import ContactForm from "@/components/contact-form"
 import Footer from "@/components/footer"
+import Header from "@/components/header"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Mail, Phone, MapPin } from "lucide-react"
+import { Mail, MapPin, Phone } from "lucide-react"
 import { getDictionary } from "../dictionaries"
 
 export default async function ContactPage({
@@ -32,47 +30,7 @@ export default async function ContactPage({
                 <CardDescription>{dict.contact.form.description}</CardDescription>
               </CardHeader>
               <CardContent>
-                <form className="space-y-4">
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div>
-                      <label htmlFor="firstName" className="block text-sm font-medium mb-2">
-                        {dict.contact.form.firstName}
-                      </label>
-                      <Input id="firstName" placeholder="John" />
-                    </div>
-                    <div>
-                      <label htmlFor="lastName" className="block text-sm font-medium mb-2">
-                        {dict.contact.form.lastName}
-                      </label>
-                      <Input id="lastName" placeholder="Doe" />
-                    </div>
-                  </div>
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium mb-2">
-                      {dict.contact.form.email}
-                    </label>
-                    <Input id="email" type="email" placeholder="john@example.com" />
-                  </div>
-                  <div>
-                    <label htmlFor="subject" className="block text-sm font-medium mb-2">
-                      {dict.contact.form.subject}
-                    </label>
-                    <Input id="subject" placeholder="Project inquiry" />
-                  </div>
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-medium mb-2">
-                      {dict.contact.form.message}
-                    </label>
-                    <Textarea
-                      id="message"
-                      placeholder={dict.contact.form.messagePlaceholder}
-                      className="min-h-[120px]"
-                    />
-                  </div>
-                  <Button type="submit" className="w-full">
-                    {dict.contact.form.send}
-                  </Button>
-                </form>
+                <ContactForm dict={dict} />
               </CardContent>
             </Card>
 
