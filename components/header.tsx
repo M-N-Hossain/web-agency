@@ -92,7 +92,7 @@ export default function Header({ dict, lang }: HeaderProps) {
             <ThemeToggle />
             <LanguageSwitcher currentLang={lang} />
             <button
-              className="ml-4 px-4 py-2 bg-primary text-white rounded hover:bg-primary-dark transition-colors"
+              className="ml-4 px-4 py-2 bg-primary text-white rounded hover:bg-primary-dark transition-colors dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700"
               onClick={() => window.location.href = `/${lang}/contact`}
             >
               Get Started
