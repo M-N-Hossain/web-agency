@@ -1,10 +1,10 @@
 "use client"
 
-import { LanguageSwitcher } from "@/components/language-switcher"
-import { ThemeToggle } from "@/components/theme-toggle"
+import { LanguageSwitcher } from "@/components/language-switcher";
+import { ThemeToggle } from "@/components/theme-toggle";
 import { ChevronDown } from "lucide-react"; // Ignoring type checks for this import
-import Link from "next/link"
-import { useState } from "react"
+import Link from "next/link";
+import { useState } from "react";
 
 interface HeaderProps {
   dict: any
@@ -91,6 +91,12 @@ export default function Header({ dict, lang }: HeaderProps) {
           <div className="flex items-center space-x-4">
             <ThemeToggle />
             <LanguageSwitcher currentLang={lang} />
+            <button
+              className="ml-4 px-4 py-2 bg-primary text-white rounded hover:bg-primary-dark transition-colors"
+              onClick={() => window.location.href = `/${lang}/contact`}
+            >
+              Get Started
+            </button>
           </div>
         </div>
       </div>
