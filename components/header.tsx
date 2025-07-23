@@ -37,7 +37,7 @@ export default function Header({ dict, lang }: HeaderProps) {
                 {dict.nav.services}
                 <ChevronDown className="ml-1 h-4 w-4" />
               </DropdownMenuTrigger>
-              <DropdownMenuContent>
+              <DropdownMenuContent className="w-44 mt-2">
                 <DropdownMenuItem asChild>
                   <Link href={`/${lang}/services`}>{dict.nav.allServices}</Link>
                 </DropdownMenuItem>
