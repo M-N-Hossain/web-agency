@@ -2,11 +2,9 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { LanguageSwitcher } from "@/components/language-switcher"
-import { Menu, X, ChevronDown } from "lucide-react"
+import { ChevronDown } from "lucide-react" // Ignoring type checks for this import
 
 interface HeaderProps {
   dict: any
@@ -15,6 +13,7 @@ interface HeaderProps {
 
 export default function Header({ dict, lang }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false)
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -32,83 +31,68 @@ export default function Header({ dict, lang }: HeaderProps) {
             <Link href={`/${lang}/about`} className="text-sm font-medium hover:text-primary transition-colors">
               {dict.nav.about}
             </Link>
-            <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center text-sm font-medium hover:text-primary transition-colors">
+            <div className="relative">
+              <button
+                className="flex items-center text-sm font-medium hover:text-primary transition-colors"
+                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+              >
                 {dict.nav.services}
                 <ChevronDown className="ml-1 h-4 w-4" />
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-44 mt-2">
-                <DropdownMenuItem asChild>
-                  <Link href={`/${lang}/services`}>{dict.nav.allServices}</Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem>{dict.services.static.title}</DropdownMenuItem>
-                <DropdownMenuItem>{dict.services.dynamic.title}</DropdownMenuItem>
-                <DropdownMenuItem>{dict.services.custom.title}</DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
+              </button>
+              {isDropdownOpen && (
+                <div className="absolute mt-2 w-44 bg-white border rounded shadow">
+                  <Link href={`/${lang}/services`} className="block px-4 py-2 text-sm hover:bg-gray-100">
+                    {dict.nav.allServices}
+                  </Link>
+                  <div className="block px-4 py-2 text-sm hover:bg-gray-100">
+                    {dict.services.static.title}
+                  </div>
+                  <div className="block px-4 py-2 text-sm hover:bg-gray-100">
+                    {dict.services.dynamic.title}
+                  </div>
+                  <div className="block px-4 py-2 text-sm hover:bg-gray-100">
+                    {dict.services.custom.title}
+                  </div>
+                </div>
+              )}
+            </div>
             <Link href={`/${lang}/contact`} className="text-sm font-medium hover:text-primary transition-colors">
               {dict.nav.contact}
             </Link>
           </nav>
 
-          <div className="hidden md:flex items-center space-x-4">
-            <LanguageSwitcher currentLang={lang} />
-            <ThemeToggle />
-            <Button asChild>
-              <Link href={`/${lang}/contact`}>{dict.nav.getStarted}</Link>
-            </Button>
+          {/* Mobile Navigation */}
+          <div className="md:hidden">
+            <button
+              className="p-2 text-gray-500 hover:text-gray-700"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+            >
+              {isMenuOpen ? "Close" : "Menu"}
+            </button>
+            {isMenuOpen && (
+              <div className="absolute top-16 left-0 w-full bg-white border-t">
+                <Link href={`/${lang}`} className="block px-4 py-2 text-sm hover:bg-gray-100">
+                  {dict.nav.home}
+                </Link>
+                <Link href={`/${lang}/about`} className="block px-4 py-2 text-sm hover:bg-gray-100">
+                  {dict.nav.about}
+                </Link>
+                <Link href={`/${lang}/services`} className="block px-4 py-2 text-sm hover:bg-gray-100">
+                  {dict.nav.services}
+                </Link>
+                <Link href={`/${lang}/contact`} className="block px-4 py-2 text-sm hover:bg-gray-100">
+                  {dict.nav.contact}
+                </Link>
+              </div>
+            )}
           </div>
 
-          {/* Mobile Menu Button */}
-          <div className="flex md:hidden items-center space-x-2">
-            <LanguageSwitcher currentLang={lang} />
+          {/* Theme and Language Switcher */}
+          <div className="flex items-center space-x-4">
             <ThemeToggle />
-            <Button variant="ghost" size="icon" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-              {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-            </Button>
+            <LanguageSwitcher currentLang={lang} />
           </div>
         </div>
-
-        {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <div className="md:hidden border-t py-4">
-            <nav className="flex flex-col space-y-4">
-              <Link
-                href={`/${lang}`}
-                className="text-sm font-medium hover:text-primary transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {dict.nav.home}
-              </Link>
-              <Link
-                href={`/${lang}/about`}
-                className="text-sm font-medium hover:text-primary transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {dict.nav.about}
-              </Link>
-              <Link
-                href={`/${lang}/services`}
-                className="text-sm font-medium hover:text-primary transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {dict.nav.services}
-              </Link>
-              <Link
-                href={`/${lang}/contact`}
-                className="text-sm font-medium hover:text-primary transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {dict.nav.contact}
-              </Link>
-              <Button asChild className="w-fit">
-                <Link href={`/${lang}/contact`} onClick={() => setIsMenuOpen(false)}>
-                  {dict.nav.getStarted}
-                </Link>
-              </Button>
-            </nav>
-          </div>
-        )}
       </div>
     </header>
   )
