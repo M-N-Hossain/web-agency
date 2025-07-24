@@ -4,7 +4,7 @@ import { LanguageSwitcher } from "@/components/language-switcher";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { ChevronDown } from "lucide-react"; // Ignoring type checks for this import
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 interface HeaderProps {
   dict: any
@@ -14,6 +14,20 @@ interface HeaderProps {
 export default function Header({ dict, lang }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -40,17 +54,17 @@ export default function Header({ dict, lang }: HeaderProps) {
                 <ChevronDown className="ml-1 h-4 w-4" />
               </button>
               {isDropdownOpen && (
-                <div className="absolute mt-2 w-44 bg-white border rounded shadow">
-                  <Link href={`/${lang}/services`} className="block px-4 py-2 text-sm hover:bg-gray-100">
+                <div ref={dropdownRef} className="absolute mt-2 w-44 bg-gray-800 border border-gray-700 rounded shadow">
+                  <Link href={`/${lang}/services`} className="block px-4 py-2 text-sm text-gray-200 hover:bg-gray-700">
                     {dict.nav.allServices}
                   </Link>
-                  <div className="block px-4 py-2 text-sm hover:bg-gray-100">
+                  <div className="block px-4 py-2 text-sm text-gray-200 hover:bg-gray-700">
                     {dict.services.static.title}
                   </div>
-                  <div className="block px-4 py-2 text-sm hover:bg-gray-100">
+                  <div className="block px-4 py-2 text-sm text-gray-200 hover:bg-gray-700">
                     {dict.services.dynamic.title}
                   </div>
-                  <div className="block px-4 py-2 text-sm hover:bg-gray-100">
+                  <div className="block px-4 py-2 text-sm text-gray-200 hover:bg-gray-700">
                     {dict.services.custom.title}
                   </div>
                 </div>
