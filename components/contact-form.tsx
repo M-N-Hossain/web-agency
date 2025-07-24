@@ -86,7 +86,7 @@ export default function ContactForm({ dict }: { dict: any }) {
           {errors.firstName && <p className="text-red-500 text-sm mt-1">{errors.firstName}</p>}
         </div>
         <div>
-          <label htmlFor="lastName" className="block text-sm font-medium mb-2">
+          <label htmlFor="lastName" className="block text-sm font-medium  mb-2">
             {dict.contact.form.lastName}
           </label>
           <Input
@@ -136,7 +136,7 @@ export default function ContactForm({ dict }: { dict: any }) {
         />
         {errors.message && <p className="text-red-500 text-sm mt-1">{errors.message}</p>}
       </div>
-      <Button type="submit" className="w-full" disabled={loading}>
+      <Button type="submit" className="w-full bg-blue-100 text-blue-500 rounded hover:bg-blue-200 transition-colors" disabled={loading}>
         {loading ? "Sending..." : dict.contact.form.send}
       </Button>
     </form>

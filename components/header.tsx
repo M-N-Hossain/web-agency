@@ -34,20 +34,20 @@ export default function Header({ dict, lang }: HeaderProps) {
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
           <Link href={`/${lang}`} className="flex items-center space-x-2">
-            <span className="text-2xl font-bold">WebAgency</span>
+            <span className="text-2xl font-bold"><span className="text-blue-500">Web</span><span className="text-blue-300 font-bold">Agency</span></span>
           </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <Link href={`/${lang}`} className="text-sm font-medium hover:text-primary transition-colors">
+            <Link href={`/${lang}`} className="text-md font-medium hover:text-blue-600 transition-colors">
               {dict.nav.home}
             </Link>
-            <Link href={`/${lang}/about`} className="text-sm font-medium hover:text-primary transition-colors">
+            <Link href={`/${lang}/about`} className="text-md font-medium  hover:text-blue-600 transition-colors">
               {dict.nav.about}
             </Link>
             <div className="relative">
               <button
-                className="flex items-center text-sm font-medium hover:text-primary transition-colors"
+                className="flex items-center text-md font-medium hover:text-blue-600 transition-colors"
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
               >
                 {dict.nav.services}
@@ -55,22 +55,22 @@ export default function Header({ dict, lang }: HeaderProps) {
               </button>
               {isDropdownOpen && (
                 <div ref={dropdownRef} className="absolute mt-2 w-44 bg-popover border border-muted rounded-md shadow-md">
-                  <Link href={`/${lang}/services`} className="block px-4 py-2 text-sm text-popover-foreground hover:bg-accent">
+                  <Link href={`/${lang}/services`} className="block px-4 py-2 text-sm text-popover-foreground hover:bg-blue-100 hover:text-blue-500">
                     {dict.nav.allServices}
                   </Link>
-                  <div className="block px-4 py-2 text-sm text-popover-foreground hover:bg-accent">
+                  <div className="block px-4 py-2 text-sm text-popover-foreground hover:bg-blue-100 hover:text-blue-500">
                     {dict.services.static.title}
                   </div>
-                  <div className="block px-4 py-2 text-sm text-popover-foreground hover:bg-accent">
+                  <div className="block px-4 py-2 text-sm text-popover-foreground hover:bg-blue-100 hover:text-blue-500">
                     {dict.services.dynamic.title}
                   </div>
-                  <div className="block px-4 py-2 text-sm text-popover-foreground hover:bg-accent">
+                  <div className="block px-4 py-2 text-sm text-popover-foreground hover:bg-blue-100 hover:text-blue-500 ">
                     {dict.services.custom.title}
                   </div>
                 </div>
               )}
             </div>
-            <Link href={`/${lang}/contact`} className="text-sm font-medium hover:text-primary transition-colors">
+            <Link href={`/${lang}/contact`} className="text-sm font-medium hover:text-blue-600 transition-colors">
               {dict.nav.contact}
             </Link>
           </nav>
@@ -78,23 +78,23 @@ export default function Header({ dict, lang }: HeaderProps) {
           {/* Mobile Navigation */}
           <div className="md:hidden">
             <button
-              className="p-2 text-gray-500 hover:text-gray-700"
+              className="p-2 text-gray-500 hover:text-blue-500"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
               {isMenuOpen ? "Close" : "Menu"}
             </button>
             {isMenuOpen && (
               <div className="absolute top-16 left-0 w-full bg-white border-t">
-                <Link href={`/${lang}`} className="block px-4 py-2 text-sm hover:bg-gray-100">
+                <Link href={`/${lang}`} className="block px-4 py-2 text-sm hover:bg-blue-100">
                   {dict.nav.home}
                 </Link>
-                <Link href={`/${lang}/about`} className="block px-4 py-2 text-sm hover:bg-gray-100">
+                <Link href={`/${lang}/about`} className="block px-4 py-2 text-sm hover:bg-blue-100 ">
                   {dict.nav.about}
                 </Link>
-                <Link href={`/${lang}/services`} className="block px-4 py-2 text-sm hover:bg-gray-100">
+                <Link href={`/${lang}/services`} className="block px-4 py-2 text-sm hover:bg-blue-100">
                   {dict.nav.services}
                 </Link>
-                <Link href={`/${lang}/contact`} className="block px-4 py-2 text-sm hover:bg-gray-100">
+                <Link href={`/${lang}/contact`} className="block px-4 py-2 text-sm hover:bg-blue-100">
                   {dict.nav.contact}
                 </Link>
               </div>
@@ -106,7 +106,7 @@ export default function Header({ dict, lang }: HeaderProps) {
             <ThemeToggle />
             <LanguageSwitcher currentLang={lang} />
             <button
-              className="ml-4 px-4 py-2 bg-primary text-white rounded hover:bg-primary-dark transition-colors dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700"
+              className="ml-4 px-4 py-2 bg-blue-100 text-blue-500 rounded hover:bg-blue-200 transition-colors"
               onClick={() => window.location.href = `/${lang}/contact`}
             >
               Get Started
