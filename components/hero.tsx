@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import "@/styles/animations.css";
 import Link from "next/link";
+import { ScrollIndicator } from "./scroll-indicator";
 
 interface HeroProps {
   dict: any
@@ -10,7 +11,7 @@ interface HeroProps {
 export default function Hero({ dict, lang }: HeroProps) {
   return (
     <section
-      className="relative py-20 md:py-32 lg:py-40"
+      className="relative py-20 md:py-32 lg:py-40 hero-section"
       style={{
         background: "linear-gradient(to bottom, #e0f7fa, #ffffff)",
         backgroundImage: "url('/Hero.jpg')",
@@ -41,6 +42,7 @@ export default function Hero({ dict, lang }: HeroProps) {
               <Link href={`/${lang}/services`}>{dict.hero.viewServices}</Link>
             </Button>
           </div>
+          <ScrollIndicator />
         </div>
       </div>
     </section>

@@ -2,6 +2,7 @@
 
 import { LanguageSwitcher } from "@/components/language-switcher";
 import { ThemeToggle } from "@/components/theme-toggle";
+import "@/styles/header.css";
 import { ChevronDown } from "lucide-react"; // Ignoring type checks for this import
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
@@ -70,7 +71,7 @@ export default function Header({ dict, lang }: HeaderProps) {
                 </div>
               )}
             </div>
-            <Link href={`/${lang}/contact`} className="text-sm font-medium hover:text-blue-600 transition-colors">
+            <Link href={`/${lang}/contact`} className="text-sm font-medium hover:text-blue-600 transition-colors nav-link">
               {dict.nav.contact}
             </Link>
           </nav>
@@ -106,7 +107,7 @@ export default function Header({ dict, lang }: HeaderProps) {
             <ThemeToggle />
             <LanguageSwitcher currentLang={lang} />
             <button
-              className="ml-4 px-4 py-2 bg-blue-100 text-blue-500 rounded hover:bg-blue-200 transition-colors cta-button"
+              className="ml-4 px-4 py-2 bg-blue-100 text-blue-500 rounded hover:bg-blue-200 transition-colors"
               onClick={() => window.location.href = `/${lang}/contact`}
             >
               Get Started
@@ -114,34 +115,6 @@ export default function Header({ dict, lang }: HeaderProps) {
           </div>
         </div>
       </div>
-
-      <style jsx>{`
-        .header {
-          transition: all 0.3s ease;
-        }
-        .nav-link {
-          position: relative;
-          transition: all 0.3s ease;
-        }
-        .nav-link::after {
-          content: '';
-          position: absolute;
-          bottom: -5px;
-          left: 0;
-          width: 0;
-          height: 2px;
-          transition: width 0.3s ease;
-        }
-        .nav-link:hover::after {
-          width: 100%;
-        }
-        .cta-button {
-          transition: all 0.3s ease;
-        }
-        .cta-button:hover {
-          transform: translateY(-2px);
-        }
-      `}</style>
     </header>
   )
 }
