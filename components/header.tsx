@@ -7,6 +7,7 @@ import { ChevronDown } from "lucide-react"; // Ignoring type checks for this imp
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
+import ServiceDropDown from "./common/ServiceDropDown";
 
 interface HeaderProps {
   dict: any
@@ -70,29 +71,35 @@ export default function Header({ dict, lang }: HeaderProps) {
             >
               {dict.nav.about}
             </Link>
-            <div className="relative group">
+            <div className="relative group"
+            >
               <button
                 className={`flex items-center text-md font-medium transition-colors nav-link hover:text-blue-600${activeSection === 'services' ? ' active' : ''}`}
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                onMouseOver={() => setIsDropdownOpen(true)}
               >
                 {dict.nav.services}
                 <ChevronDown className="ml-1 h-4 w-4" />
               </button>
               {isDropdownOpen && (
-                <div ref={dropdownRef} className="absolute mt-2 w-44 bg-popover border border-muted rounded-md shadow-md">
-                  <Link href={`/${lang}/services`} className="block px-4 py-2 text-sm text-popover-foreground hover:bg-blue-100 hover:text-blue-500">
-                    {dict.nav.allServices}
-                  </Link>
-                  <div className="block px-4 py-2 text-sm text-popover-foreground hover:bg-blue-100 hover:text-blue-500">
-                    {dict.services.static.title}
-                  </div>
-                  <div className="block px-4 py-2 text-sm text-popover-foreground hover:bg-blue-100 hover:text-blue-500">
-                    {dict.services.dynamic.title}
-                  </div>
-                  <div className="block px-4 py-2 text-sm text-popover-foreground hover:bg-blue-100 hover:text-blue-500 ">
-                    {dict.services.custom.title}
-                  </div>
-                </div>
+                // <div ref={dropdownRef} className="absolute mt-2 w-44 bg-popover border border-muted rounded-md shadow-md">
+                //   <Link href={`/${lang}/services`} className="block px-4 py-2 text-sm text-popover-foreground hover:bg-blue-100 hover:text-blue-500">
+                //     {dict.nav.allServices}
+                //   </Link>
+                //   <div className="block px-4 py-2 text-sm text-popover-foreground hover:bg-blue-100 hover:text-blue-500">
+                //     {dict.services.static.title}
+                //   </div>
+                //   <div className="block px-4 py-2 text-sm text-popover-foreground hover:bg-blue-100 hover:text-blue-500">
+                //     {dict.services.dynamic.title}
+                //   </div>
+                //   <div className="block px-4 py-2 text-sm text-popover-foreground hover:bg-blue-100 hover:text-blue-500 ">
+                //     {dict.services.custom.title}
+                //   </div>
+                // </div>
+
+
+                <ServiceDropDown dict={dict} lang={lang} dropdownRef={dropdownRef} setIsDropdownOpen={setIsDropdownOpen} />
+
               )}
             </div>
             <Link

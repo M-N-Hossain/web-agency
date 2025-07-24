@@ -219,13 +219,20 @@ export default async function ServicesPage({
               <p className="text-xl text-gray-300 leading-relaxed mb-12 font-light">
                 Let's discuss your project and find the perfect solution for your needs.
               </p>
+              
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button className="bg-white text-gray-900 hover:bg-gray-100 px-8 py-4 text-lg rounded-xl font-medium">
+                <a
+                  href={`/${lang}/contact`}
+                  className="inline-flex items-center justify-center px-8 py-4 bg-white text-gray-900 font-medium rounded-xl hover:bg-gray-100 transition-colors duration-200 text-lg"
+                >
                   Start Your Project
-                </Button>
-                <Button variant="outline" className="border-gray-600 text-white hover:border-gray-500 hover:bg-gray-800 px-8 py-4 text-lg rounded-xl font-medium">
+                </a>
+                <a
+                  href={`/${lang}/services`}
+                  className="inline-flex items-center justify-center px-8 py-4 border border-gray-600 text-white font-medium rounded-xl hover:border-gray-500 hover:bg-gray-800 transition-colors duration-200 text-lg"
+                >
                   Schedule Consultation
-                </Button>
+                </a>
               </div>
             </div>
           </div>

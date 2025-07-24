@@ -1,7 +1,10 @@
+"use client"
+
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Globe, Headphones, Search, Shield, Smartphone, Zap, ArrowRight, CheckCircle } from "lucide-react"
+import { ArrowRight, CheckCircle, Globe, Headphones, Search, Shield, Smartphone, Zap } from "lucide-react"
 import Link from "next/link"
+import { useState } from "react"
 
 interface ServiceCardsProps {
   dict: any
@@ -9,6 +12,8 @@ interface ServiceCardsProps {
 }
 
 export default function ServiceCards({ dict, lang }: ServiceCardsProps) {
+  const [hoveredCardIndex, setHoveredCardIndex] = useState<number | null>(null)
+
   const services = [
     {
       icon: Globe,
@@ -73,11 +78,17 @@ export default function ServiceCards({ dict, lang }: ServiceCardsProps) {
         {/* Service Cards - Cleaner grid with better spacing */}
         <div className="grid lg:grid-cols-3 gap-8 mb-24">
           {services.map((service, index) => (
-            <Card 
-              key={index} 
+            <Card
+              key={index}
               className={`relative group border-0 shadow-sm hover:shadow-xl transition-all duration-300 bg-white dark:bg-gray-800 rounded-2xl overflow-hidden ${
-                service.popular ? 'ring-2 ring-blue-500 scale-105' : ''
+                service.popular && hoveredCardIndex === null
+                  ? "ring-2 ring-blue-500 scale-105 shadow-2xl"
+                  : hoveredCardIndex === index
+                  ? "ring-2 ring-blue-500 scale-105 shadow-2xl"
+                  : ""
               }`}
+              onMouseEnter={() => setHoveredCardIndex(index)}
+              onMouseLeave={() => setHoveredCardIndex(null)}
             >
               {/* Popular badge */}
               {service.popular && (
