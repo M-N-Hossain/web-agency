@@ -54,17 +54,17 @@ export default function Header({ dict, lang }: HeaderProps) {
                 <ChevronDown className="ml-1 h-4 w-4" />
               </button>
               {isDropdownOpen && (
-                <div ref={dropdownRef} className="absolute mt-2 w-44 bg-gray-800 border border-gray-700 rounded shadow">
-                  <Link href={`/${lang}/services`} className="block px-4 py-2 text-sm text-gray-200 hover:bg-gray-700">
+                <div ref={dropdownRef} className="absolute mt-2 w-44 bg-popover border border-muted rounded-md shadow-md">
+                  <Link href={`/${lang}/services`} className="block px-4 py-2 text-sm text-popover-foreground hover:bg-accent">
                     {dict.nav.allServices}
                   </Link>
-                  <div className="block px-4 py-2 text-sm text-gray-200 hover:bg-gray-700">
+                  <div className="block px-4 py-2 text-sm text-popover-foreground hover:bg-accent">
                     {dict.services.static.title}
                   </div>
-                  <div className="block px-4 py-2 text-sm text-gray-200 hover:bg-gray-700">
+                  <div className="block px-4 py-2 text-sm text-popover-foreground hover:bg-accent">
                     {dict.services.dynamic.title}
                   </div>
-                  <div className="block px-4 py-2 text-sm text-gray-200 hover:bg-gray-700">
+                  <div className="block px-4 py-2 text-sm text-popover-foreground hover:bg-accent">
                     {dict.services.custom.title}
                   </div>
                 </div>
