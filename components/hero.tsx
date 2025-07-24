@@ -33,7 +33,7 @@ export default function Hero({ dict, lang }: HeroProps) {
           <div className="flex flex-col sm:flex-row gap-4 justify-center hero-buttons">
             <Button
               size="lg"
-              className="bg-blue-100 text-blue-500 hover:bg-blue-200"
+              className="bg-blue-500 text-white hover:bg-white hover:text-blue-500 transition-colors duration-300 "
               asChild
             >
               <Link href={`/${lang}/contact`}>{dict.hero.startProject}</Link>
