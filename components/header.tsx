@@ -39,13 +39,13 @@ export default function Header({ dict, lang }: HeaderProps) {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <Link href={`/${lang}`} className="text-md font-medium hover:text-blue-600 transition-colors">
+            <Link href={`/${lang}`} className="text-md font-medium hover:text-blue-600 transition-colors nav-link">
               {dict.nav.home}
             </Link>
-            <Link href={`/${lang}/about`} className="text-md font-medium  hover:text-blue-600 transition-colors">
+            <Link href={`/${lang}/about`} className="text-md font-medium  hover:text-blue-600 transition-colors nav-link">
               {dict.nav.about}
             </Link>
-            <div className="relative">
+            <div className="relative group">
               <button
                 className="flex items-center text-md font-medium hover:text-blue-600 transition-colors"
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
@@ -106,7 +106,7 @@ export default function Header({ dict, lang }: HeaderProps) {
             <ThemeToggle />
             <LanguageSwitcher currentLang={lang} />
             <button
-              className="ml-4 px-4 py-2 bg-blue-100 text-blue-500 rounded hover:bg-blue-200 transition-colors"
+              className="ml-4 px-4 py-2 bg-blue-100 text-blue-500 rounded hover:bg-blue-200 transition-colors cta-button"
               onClick={() => window.location.href = `/${lang}/contact`}
             >
               Get Started
@@ -114,6 +114,34 @@ export default function Header({ dict, lang }: HeaderProps) {
           </div>
         </div>
       </div>
+
+      <style jsx>{`
+        .header {
+          transition: all 0.3s ease;
+        }
+        .nav-link {
+          position: relative;
+          transition: all 0.3s ease;
+        }
+        .nav-link::after {
+          content: '';
+          position: absolute;
+          bottom: -5px;
+          left: 0;
+          width: 0;
+          height: 2px;
+          transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+          width: 100%;
+        }
+        .cta-button {
+          transition: all 0.3s ease;
+        }
+        .cta-button:hover {
+          transform: translateY(-2px);
+        }
+      `}</style>
     </header>
   )
 }

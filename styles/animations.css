@@ -1,0 +1,38 @@
+/* Animation Styles */
+.hero-title {
+  opacity: 0;
+  animation: slideUp 1s ease 0.5s forwards;
+}
+.hero-subtitle {
+  opacity: 0;
+  animation: slideUp 1s ease 0.7s forwards;
+}
+.hero-description {
+  opacity: 0;
+  animation: slideUp 1s ease 0.9s forwards;
+}
+.hero-buttons {
+  opacity: 0;
+  animation: slideUp 1s ease 1.1s forwards;
+}
+.scroll-indicator {
+  animation: bounce 2s infinite;
+}
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
