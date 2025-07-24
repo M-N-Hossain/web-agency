@@ -18,6 +18,10 @@
 .scroll-indicator {
   animation: bounce 2s infinite;
 }
+
+.scroll-indicator:hover {
+  transform: scale(2);
+}
 @keyframes slideUp {
   from {
     opacity: 0;

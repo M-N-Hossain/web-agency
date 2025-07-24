@@ -4,7 +4,7 @@ export default function ServiceCard({ service }) {
   const { icon: Icon, title, description, price, features, href, popular } = service;
 
   return (
-    <div className="relative bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 p-4">
+    <div className="relative bg-white rounded-lg shadow-md hover:shadow-lg hover:shadow-gray-500 transition-shadow duration-300 p-4">
       {popular && (
         <span className="absolute top-2 right-2 bg-blue-500 text-white text-xs font-semibold px-1 py-0.5 rounded">
           Popular

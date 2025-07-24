@@ -3,7 +3,7 @@
 import { LanguageSwitcher } from "@/components/language-switcher";
 import { ThemeToggle } from "@/components/theme-toggle";
 import "@/styles/header.css";
-import { ChevronDown } from "lucide-react"; // Ignoring type checks for this import
+import { ChevronDown, ChevronUp } from "lucide-react"; // Ignoring type checks for this import
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
@@ -79,7 +79,7 @@ export default function Header({ dict, lang }: HeaderProps) {
                 onMouseOver={() => setIsDropdownOpen(true)}
               >
                 {dict.nav.services}
-                <ChevronDown className="ml-1 h-4 w-4" />
+                { isDropdownOpen ? <ChevronUp className="ml-1 h-4 w-4" /> : <ChevronDown className="ml-1 h-4 w-4" />}
               </button>
               {isDropdownOpen && (
                 // <div ref={dropdownRef} className="absolute mt-2 w-44 bg-popover border border-muted rounded-md shadow-md">

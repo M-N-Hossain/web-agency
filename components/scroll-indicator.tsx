@@ -3,7 +3,7 @@
 export function ScrollIndicator() {
   return (
     <div
-      className="scroll-indicator cursor-pointer"
+      className="scroll-indicator cursor-pointer hover:scale-[0.5]"
       style={{
         position: "absolute",
         bottom: "2rem",
@@ -11,8 +11,8 @@ export function ScrollIndicator() {
         transform: "translateX(-50%)",
         opacity: 1,
         zIndex: 20,
-        // padding: "0.75rem"
       }}
+
       onClick={() => {
         const nextSection = document.querySelector("section:not(.hero-section)");
         if (nextSection) {
@@ -26,6 +26,7 @@ export function ScrollIndicator() {
         width="40"
         height="40"
         fill="none"
+        className="hover:scale-150 transition-transform duration-300"
         viewBox="0 0 36 36"
         style={{ display: "block", margin: "0 auto" }}
       >

@@ -1,8 +1,7 @@
 import Link from "next/link";
 import ServiceCard from "./ServiceCard";
 
-import { Globe, Headphones, Search, Shield, Smartphone, Zap, ArrowRight, CheckCircle } from "lucide-react"
-import { Button } from "@/components/ui/button";
+import { Globe, Smartphone, Zap } from "lucide-react";
 
 
 
@@ -58,7 +57,7 @@ export default function ServiceDropDown({
     >
       <Link
         href={`/${lang}/services`}
-        className="block px-4 py-2 text-sm text-popover-foreground hover:bg-blue-100 hover:text-blue-500"
+        className="block px-4 py-2 text-sm text-popover-foreground "
       >
         {/* {dict.nav.allServices} */}
         <ServiceCard key={1} service={services[0]} />
@@ -66,7 +65,7 @@ export default function ServiceDropDown({
       </Link>
       <Link
         href={`/${lang}/services`}
-        className="block px-4 py-2 text-sm text-popover-foreground hover:bg-blue-100 hover:text-blue-500"
+        className="block px-4 py-2 text-sm text-popover-foreground "
       >
         {/* {dict.nav.allServices} */}
         <ServiceCard key={1} service={services[0]} />
@@ -74,7 +73,7 @@ export default function ServiceDropDown({
       </Link>
       <Link
         href={`/${lang}/services`}
-        className="block px-4 py-2 text-sm text-popover-foreground hover:bg-blue-100 hover:text-blue-500"
+        className="block px-4 py-2 text-sm text-popover-foreground "
       >
         {/* {dict.nav.allServices} */}
         <ServiceCard key={1} service={services[0]} />
@@ -82,7 +81,7 @@ export default function ServiceDropDown({
       </Link>
       <Link
         href={`/${lang}/services`}
-        className="block px-4 py-2 text-sm text-popover-foreground hover:bg-blue-100 hover:text-blue-500"
+        className="block px-4 py-2 text-sm text-popover-foreground "
       >
         {/* {dict.nav.allServices} */}
         <ServiceCard key={1} service={services[0]} />
