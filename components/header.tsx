@@ -5,6 +5,7 @@ import { ThemeToggle } from "@/components/theme-toggle";
 import "@/styles/header.css";
 import { ChevronDown } from "lucide-react"; // Ignoring type checks for this import
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
 interface HeaderProps {
@@ -16,6 +17,23 @@ export default function Header({ dict, lang }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
   const dropdownRef = useRef<HTMLDivElement>(null);
+
+  const pathname = usePathname();
+
+  // Helper to get the main section (e.g., '', 'about', 'services', 'contact')
+  function getActiveSection(pathname: string) {
+    // Remove leading/trailing slashes and split
+    const parts = pathname.replace(/^\/+|\/+$/g, '').split('/');
+    // e.g. /en/about => [en, about]
+    // If only /en, return '' (home)
+    return parts[1] || '';
+  }
+
+  const activeSection = getActiveSection(pathname);
+
+  console.log("Active Section:", activeSection);
+
+
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -40,15 +58,21 @@ export default function Header({ dict, lang }: HeaderProps) {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <Link href={`/${lang}`} className="text-md font-medium hover:text-blue-600 transition-colors nav-link">
+            <Link
+              href={`/${lang}`}
+              className={`text-md font-medium transition-colors nav-link hover:text-blue-600${activeSection === '' ? ' active' : ''}`}
+            >
               {dict.nav.home}
             </Link>
-            <Link href={`/${lang}/about`} className="text-md font-medium  hover:text-blue-600 transition-colors nav-link">
+            <Link
+              href={`/${lang}/about`}
+              className={`text-md font-medium transition-colors nav-link hover:text-blue-600${activeSection === 'about' ? ' active' : ''}`}
+            >
               {dict.nav.about}
             </Link>
             <div className="relative group">
               <button
-                className="flex items-center text-md font-medium hover:text-blue-600 transition-colors"
+                className={`flex items-center text-md font-medium transition-colors nav-link hover:text-blue-600${activeSection === 'services' ? ' active' : ''}`}
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
               >
                 {dict.nav.services}
@@ -71,7 +95,10 @@ export default function Header({ dict, lang }: HeaderProps) {
                 </div>
               )}
             </div>
-            <Link href={`/${lang}/contact`} className="text-sm font-medium hover:text-blue-600 transition-colors nav-link">
+            <Link
+              href={`/${lang}/contact`}
+              className={`text-sm font-medium transition-colors nav-link hover:text-blue-600${activeSection === 'contact' ? ' active' : ''}`}
+            >
               {dict.nav.contact}
             </Link>
           </nav>
@@ -103,11 +130,12 @@ export default function Header({ dict, lang }: HeaderProps) {
           </div>
 
           {/* Theme and Language Switcher */}
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center relative left-14 ">
             <ThemeToggle />
             <LanguageSwitcher currentLang={lang} />
             <button
-              className="ml-4 px-4 py-2 bg-blue-100 text-blue-500 rounded hover:bg-blue-200 transition-colors"
+              className="ml-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-white hover:text-blue-500 border border-blue-500 transition-colors duration-300"
+
               onClick={() => window.location.href = `/${lang}/contact`}
             >
               Get Started

@@ -22,6 +22,7 @@
   gap: 2rem;
 }
 
+
 .nav-link {
   color: #333;
   text-decoration: none;
@@ -29,6 +30,12 @@
   position: relative;
   transition: all 0.3s ease;
 }
+
+.nav-link.active {
+  color: #667eea;
+  /* font-weight: 700; */
+}
+
 
 .nav-link::after {
   content: '';
@@ -40,6 +47,12 @@
   background: linear-gradient(135deg, #667eea, #764ba2);
   transition: width 0.3s ease;
 }
+
+/* .nav-link.active::after {
+  width: 100%;
+    background: black;
+
+} */
 
 .nav-link:hover::after {
   width: 100%;
