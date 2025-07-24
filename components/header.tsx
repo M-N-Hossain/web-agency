@@ -2,6 +2,7 @@
 
 import { LanguageSwitcher } from "@/components/language-switcher";
 import { ThemeToggle } from "@/components/theme-toggle";
+import "@/styles/header.css";
 import { ChevronDown } from "lucide-react"; // Ignoring type checks for this import
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
@@ -39,13 +40,13 @@ export default function Header({ dict, lang }: HeaderProps) {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <Link href={`/${lang}`} className="text-md font-medium hover:text-blue-600 transition-colors">
+            <Link href={`/${lang}`} className="text-md font-medium hover:text-blue-600 transition-colors nav-link">
               {dict.nav.home}
             </Link>
-            <Link href={`/${lang}/about`} className="text-md font-medium  hover:text-blue-600 transition-colors">
+            <Link href={`/${lang}/about`} className="text-md font-medium  hover:text-blue-600 transition-colors nav-link">
               {dict.nav.about}
             </Link>
-            <div className="relative">
+            <div className="relative group">
               <button
                 className="flex items-center text-md font-medium hover:text-blue-600 transition-colors"
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
@@ -70,7 +71,7 @@ export default function Header({ dict, lang }: HeaderProps) {
                 </div>
               )}
             </div>
-            <Link href={`/${lang}/contact`} className="text-sm font-medium hover:text-blue-600 transition-colors">
+            <Link href={`/${lang}/contact`} className="text-sm font-medium hover:text-blue-600 transition-colors nav-link">
               {dict.nav.contact}
             </Link>
           </nav>

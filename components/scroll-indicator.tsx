@@ -1,0 +1,37 @@
+"use client";
+
+export function ScrollIndicator() {
+  return (
+    <div
+      className="scroll-indicator cursor-pointer"
+      style={{
+        position: "absolute",
+        bottom: "2rem",
+        left: "50%",
+        transform: "translateX(-50%)",
+        opacity: 1,
+        zIndex: 20,
+        // padding: "0.75rem"
+      }}
+      onClick={() => {
+        const nextSection = document.querySelector("section:not(.hero-section)");
+        if (nextSection) {
+          nextSection.scrollIntoView({ behavior: "smooth" });
+        }
+      }}
+      title="Scroll down"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="40"
+        height="40"
+        fill="none"
+        viewBox="0 0 36 36"
+        style={{ display: "block", margin: "0 auto" }}
+      >
+        <circle cx="18" cy="18" r="17" stroke="white" strokeWidth="2" opacity="0.3" />
+        <path d="M12 16l6 6 6-6" stroke="blue" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    </div>
+  );
+}
