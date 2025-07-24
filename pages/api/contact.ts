@@ -23,12 +23,14 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     console.log(process.env.EMAIL_USER);
 
+    const { getContactMailBody } = require("../../lib/contactMailBody");
     const mailOptions = {
-    from: process.env.EMAIL_USER,
-    to: process.env.ADMIN_EMAIL,
-    replyTo: email,
-    subject: `Contact Form Submission: ${subject}`,
-    text: `Name: ${firstName} ${lastName}\nEmail: ${email}\nMessage: ${message}`,
+      from: process.env.EMAIL_USER,
+      to: process.env.ADMIN_EMAIL,
+      replyTo: email,
+      subject: `Contact Form Submission: ${subject}`,
+      text: `Name: ${firstName} ${lastName}\nEmail: ${email}\nMessage: ${message}`,
+      html: getContactMailBody({ firstName, lastName, email, subject, message }),
     };
 
     await transporter.sendMail(mailOptions);
