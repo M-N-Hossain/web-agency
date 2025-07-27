@@ -77,6 +77,15 @@
         "title": "Innovation",
         "description": "Vi holder os foran kurven med de nyeste teknologier og designtrends."
       }
+    },
+    "team": {
+      "title": "Vores Team"
+    },
+    "cta": {
+      "title": "Klar til at Arbejde Sammen?",
+      "description": "Lad os diskutere dit projekt og bringe din vision til live.",
+      "button": "Kom I Gang",
+      "secondary": "Se Tjenester"
     }
   },
   "contact": {

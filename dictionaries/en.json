@@ -77,6 +77,15 @@
         "title": "Innovation",
         "description": "We stay ahead of the curve with the latest technologies and design trends."
       }
+    },
+    "team": {
+      "title": "Our Team"
+    },
+    "cta": {
+      "title": "Ready to Work Together?",
+      "description": "Let's discuss your project and bring your vision to life.",
+      "button": "Get Started",
+      "secondary": "View Services"
     }
   },
   "contact": {
