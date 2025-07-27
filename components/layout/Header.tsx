@@ -29,8 +29,6 @@ export default function Header({ dict, lang }: ComponentWithDict) {
 
   const activeSection = getActiveSection(pathname);
 
-
-
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
@@ -45,61 +43,49 @@ export default function Header({ dict, lang }: ComponentWithDict) {
   }, []);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
           <Link href={`/${lang}`} className="flex items-center space-x-2">
-            <span className="text-2xl font-bold"><span className="text-blue-500">Web</span><span className="text-blue-300 font-bold">Agency</span></span>
+            <span className="text-2xl font-bold">
+              <span className="text-blue-600 dark:text-blue-400">Web</span>
+              <span className="text-blue-500 dark:text-blue-300 font-bold">Agency</span>
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             <Link
               href={`/${lang}`}
-              className={`text-md font-medium transition-colors nav-link hover:text-blue-600${activeSection === '' ? ' active' : ''}`}
+              className={`text-md font-medium transition-colors text-foreground hover:text-blue-600 dark:hover:text-blue-400${activeSection === '' ? ' text-blue-600 dark:text-blue-400' : ''}`}
             >
               {dict.nav.home}
             </Link>
             <Link
               href={`/${lang}/about`}
-              className={`text-md font-medium transition-colors nav-link hover:text-blue-600${activeSection === 'about' ? ' active' : ''}`}
+              className={`text-md font-medium transition-colors text-foreground hover:text-blue-600 dark:hover:text-blue-400${activeSection === 'about' ? ' text-blue-600 dark:text-blue-400' : ''}`}
             >
               {dict.nav.about}
             </Link>
-            <div className="relative group"
-            >
+            <div className="relative group">
               <button
-                className={`flex items-center text-md font-medium transition-colors nav-link hover:text-blue-600${activeSection === 'services' ? ' active' : ''}`}
+                className={`flex items-center text-md font-medium transition-colors text-foreground hover:text-blue-600 dark:hover:text-blue-400${activeSection === 'services' ? ' text-blue-600 dark:text-blue-400' : ''}`}
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                 onMouseOver={() => setIsDropdownOpen(true)}
               >
                 {dict.nav.services}
-                { isDropdownOpen ? <ChevronUp className="ml-1 h-4 w-4" /> : <ChevronDown className="ml-1 h-4 w-4" />}
+                { isDropdownOpen ? 
+                  <ChevronUp className="ml-1 h-4 w-4 text-foreground" /> : 
+                  <ChevronDown className="ml-1 h-4 w-4 text-foreground" />
+                }
               </button>
               {isDropdownOpen && (
-                // <div ref={dropdownRef} className="absolute mt-2 w-44 bg-popover border border-muted rounded-md shadow-md">
-                //   <Link href={`/${lang}/services`} className="block px-4 py-2 text-sm text-popover-foreground hover:bg-blue-100 hover:text-blue-500">
-                //     {dict.nav.allServices}
-                //   </Link>
-                //   <div className="block px-4 py-2 text-sm text-popover-foreground hover:bg-blue-100 hover:text-blue-500">
-                //     {dict.services.static.title}
-                //   </div>
-                //   <div className="block px-4 py-2 text-sm text-popover-foreground hover:bg-blue-100 hover:text-blue-500">
-                //     {dict.services.dynamic.title}
-                //   </div>
-                //   <div className="block px-4 py-2 text-sm text-popover-foreground hover:bg-blue-100 hover:text-blue-500 ">
-                //     {dict.services.custom.title}
-                //   </div>
-                // </div>
-
-
                 <ServiceDropDown dict={dict} lang={lang} dropdownRef={dropdownRef} setIsDropdownOpen={setIsDropdownOpen} />
-
               )}
             </div>
             <Link
               href={`/${lang}/contact`}
-              className={`text-sm font-medium transition-colors nav-link hover:text-blue-600${activeSection === 'contact' ? ' active' : ''}`}
+              className={`text-sm font-medium transition-colors text-foreground hover:text-blue-600 dark:hover:text-blue-400${activeSection === 'contact' ? ' text-blue-600 dark:text-blue-400' : ''}`}
             >
               {dict.nav.contact}
             </Link>
@@ -108,23 +94,35 @@ export default function Header({ dict, lang }: ComponentWithDict) {
           {/* Mobile Navigation */}
           <div className="md:hidden">
             <button
-              className="p-2 text-gray-500 hover:text-blue-500"
+              className="p-2 text-muted-foreground hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
               {isMenuOpen ? "Close" : "Menu"}
             </button>
             {isMenuOpen && (
-              <div className="absolute top-16 left-0 w-full bg-white border-t">
-                <Link href={`/${lang}`} className="block px-4 py-2 text-sm hover:bg-blue-100">
+              <div className="absolute top-16 left-0 w-full bg-background border-t border-border shadow-lg">
+                <Link 
+                  href={`/${lang}`} 
+                  className="block px-4 py-2 text-sm text-foreground hover:bg-accent hover:text-accent-foreground transition-colors"
+                >
                   {dict.nav.home}
                 </Link>
-                <Link href={`/${lang}/about`} className="block px-4 py-2 text-sm hover:bg-blue-100 ">
+                <Link 
+                  href={`/${lang}/about`} 
+                  className="block px-4 py-2 text-sm text-foreground hover:bg-accent hover:text-accent-foreground transition-colors"
+                >
                   {dict.nav.about}
                 </Link>
-                <Link href={`/${lang}/services`} className="block px-4 py-2 text-sm hover:bg-blue-100">
+                <Link 
+                  href={`/${lang}/services`} 
+                  className="block px-4 py-2 text-sm text-foreground hover:bg-accent hover:text-accent-foreground transition-colors"
+                >
                   {dict.nav.services}
                 </Link>
-                <Link href={`/${lang}/contact`} className="block px-4 py-2 text-sm hover:bg-blue-100">
+                <Link 
+                  href={`/${lang}/contact`} 
+                  className="block px-4 py-2 text-sm text-foreground hover:bg-accent hover:text-accent-foreground transition-colors"
+                >
                   {dict.nav.contact}
                 </Link>
               </div>
@@ -132,12 +130,11 @@ export default function Header({ dict, lang }: ComponentWithDict) {
           </div>
 
           {/* Theme and Language Switcher */}
-          <div className="flex items-center relative left-14 ">
+          <div className="flex items-center relative left-14">
             <ThemeToggle />
             <LanguageSwitcher currentLang={lang} />
             <button
-              className="ml-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-white hover:text-blue-500 border border-blue-500 transition-colors duration-300"
-
+              className="ml-4 px-4 py-2 bg-blue-600 dark:bg-blue-500 text-white hover:bg-white dark:hover:bg-gray-800 hover:text-blue-600 dark:hover:text-blue-400 border border-blue-600 dark:border-blue-500 hover:border-blue-600 dark:hover:border-blue-400 transition-colors duration-300 rounded-md"
               onClick={() => window.location.href = `/${lang}/contact`}
             >
               Get Started

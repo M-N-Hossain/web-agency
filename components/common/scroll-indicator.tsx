@@ -12,7 +12,6 @@ export function ScrollIndicator() {
         opacity: 1,
         zIndex: 20,
       }}
-
       onClick={() => {
         const nextSection = document.querySelector("section:not(.hero-section)");
         if (nextSection) {
@@ -30,8 +29,21 @@ export function ScrollIndicator() {
         viewBox="0 0 36 36"
         style={{ display: "block", margin: "0 auto" }}
       >
-        <circle cx="18" cy="18" r="17" stroke="white" strokeWidth="2" opacity="0.3" />
-        <path d="M12 16l6 6 6-6" stroke="blue" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+        <circle 
+          cx="18" 
+          cy="18" 
+          r="17" 
+          className="stroke-white dark:stroke-gray-300" 
+          strokeWidth="2" 
+          opacity="0.3" 
+        />
+        <path 
+          d="M12 16l6 6 6-6" 
+          className="stroke-blue-600 dark:stroke-blue-400" 
+          strokeWidth="2.5" 
+          strokeLinecap="round" 
+          strokeLinejoin="round" 
+        />
       </svg>
     </div>
   );

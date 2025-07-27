@@ -195,7 +195,12 @@ export default function ContactForm({ dict }: { dict: Dictionary }) {
         />
         {errors.message && <p className="text-red-500 text-sm mt-1">{errors.message}</p>}
       </div>
-      <Button type="submit" variant="outline" className="w-full bg-blue-100 text-blue-500 rounded hover:bg-blue-200 transition-colors" disabled={loading}>
+      <Button 
+        type="submit" 
+        variant="outline" 
+        className="w-full bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 border-blue-200 dark:border-blue-800 hover:bg-blue-100 dark:hover:bg-blue-900/40 hover:text-blue-700 dark:hover:text-blue-300 transition-colors rounded-md" 
+        disabled={loading}
+      >
         {loading ? "Sending..." : dict.contact.form.send}
       </Button>
     </form>

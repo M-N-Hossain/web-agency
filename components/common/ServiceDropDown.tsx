@@ -19,14 +19,14 @@ export default function ServiceDropDown({
   return (
     <div
       ref={dropdownRef}
-      className="absolute mt-[20px] w-[80vw] left-1/2 transform -translate-x-1/2 bg-transparent backdrop-blur-md border border-muted rounded-md shadow-md transition-all duration-500 ease-in-out opacity-0 group-hover:opacity-100 flex flex-row gap-4 p-4"
+      className="absolute mt-[20px] w-[80vw] left-1/2 transform -translate-x-1/2 bg-background/95 dark:bg-background/90 backdrop-blur-md border border-border rounded-lg shadow-lg dark:shadow-xl dark:shadow-black/20 transition-all duration-500 ease-in-out opacity-0 group-hover:opacity-100 flex flex-row gap-4 p-4"
       onMouseLeave={() => setIsDropdownOpen(false)}
     >
       {services.map((service) => (
         <Link
           key={service.id}
           href={service.href}
-          className="block px-4 py-2 text-sm text-popover-foreground"
+          className="block text-sm text-foreground hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
         >
           <ServiceCard service={service} variant="compact" />
         </Link>
