@@ -1,7 +1,7 @@
-import Footer from "@/components/footer"
-import Header from "@/components/header"
+import Footer from "@/components/layout/footer"
+import Header from "@/components/layout/header"
+import { Award, Heart, Lightbulb } from "lucide-react"
 import { getDictionary } from "../dictionaries"
-import { Award, Users, Lightbulb, Target, Heart, Zap } from "lucide-react"
 
 export default async function AboutPage({
   params,

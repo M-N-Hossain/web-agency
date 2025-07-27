@@ -17,6 +17,13 @@ module.exports = {
       },
     },
     extend: {
+      scale: {
+        98: "0.98",
+        102: "1.02",
+      },
+      boxShadow: {
+        "3xl": "0 35px 60px -12px rgba(0, 0, 0, 0.25)",
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -74,4 +81,4 @@ module.exports = {
     },
   },
   plugins: [require("tailwindcss-animate")],
-}
+};
