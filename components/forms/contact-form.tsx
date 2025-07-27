@@ -128,37 +128,39 @@ export default function ContactForm({ dict }: { dict: Dictionary }) {
   
   return (
     <form
-      className="space-y-4"
+      className="space-y-5 sm:space-y-6"
       onSubmit={handleSubmit}
     >
-      <div className="grid md:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
         <div>
-          <label htmlFor="firstName" className="block text-sm font-medium mb-2">
+          <label htmlFor="firstName" className="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-300">
             {dict.contact.form.firstName}
           </label>
           <Input
             id="firstName"
             name="firstName"
             placeholder="John"
+            className="h-12 text-base touch-manipulation"
             onChange={() => clearError("firstName")}
           />
-          {errors.firstName && <p className="text-red-500 text-sm mt-1">{errors.firstName}</p>}
+          {errors.firstName && <p className="text-red-500 text-sm mt-2">{errors.firstName}</p>}
         </div>
         <div>
-          <label htmlFor="lastName" className="block text-sm font-medium  mb-2">
+          <label htmlFor="lastName" className="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-300">
             {dict.contact.form.lastName}
           </label>
           <Input
             id="lastName"
             name="lastName"
             placeholder="Doe"
+            className="h-12 text-base touch-manipulation"
             onChange={() => clearError("lastName")}
           />
-          {errors.lastName && <p className="text-red-500 text-sm mt-1">{errors.lastName}</p>}
+          {errors.lastName && <p className="text-red-500 text-sm mt-2">{errors.lastName}</p>}
         </div>
       </div>
       <div>
-        <label htmlFor="email" className="block text-sm font-medium mb-2">
+        <label htmlFor="email" className="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-300">
           {dict.contact.form.email}
         </label>
         <Input
@@ -166,39 +168,41 @@ export default function ContactForm({ dict }: { dict: Dictionary }) {
           name="email"
           type="email"
           placeholder="john@example.com"
+          className="h-12 text-base touch-manipulation"
           onChange={() => clearError("email")}
         />
-        {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
+        {errors.email && <p className="text-red-500 text-sm mt-2">{errors.email}</p>}
       </div>
       <div>
-        <label htmlFor="subject" className="block text-sm font-medium mb-2">
+        <label htmlFor="subject" className="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-300">
           {dict.contact.form.subject}
         </label>
         <Input
           id="subject"
           name="subject"
           placeholder="Project inquiry"
+          className="h-12 text-base touch-manipulation"
           onChange={() => clearError("subject")}
         />
-        {errors.subject && <p className="text-red-500 text-sm mt-1">{errors.subject}</p>}
+        {errors.subject && <p className="text-red-500 text-sm mt-2">{errors.subject}</p>}
       </div>
       <div>
-        <label htmlFor="message" className="block text-sm font-medium mb-2">
+        <label htmlFor="message" className="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-300">
           {dict.contact.form.message}
         </label>
         <Textarea
           id="message"
           name="message"
           placeholder={dict.contact.form.messagePlaceholder}
-          className="min-h-[120px]"
+          className="min-h-[120px] sm:min-h-[140px] text-base touch-manipulation resize-y"
           onChange={() => clearError("message")}
         />
-        {errors.message && <p className="text-red-500 text-sm mt-1">{errors.message}</p>}
+        {errors.message && <p className="text-red-500 text-sm mt-2">{errors.message}</p>}
       </div>
       <Button 
         type="submit" 
         variant="outline" 
-        className="w-full bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 border-blue-200 dark:border-blue-800 hover:bg-blue-100 dark:hover:bg-blue-900/40 hover:text-blue-700 dark:hover:text-blue-300 transition-colors rounded-md" 
+        className="w-full h-12 sm:h-14 bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 border-blue-200 dark:border-blue-800 hover:bg-blue-100 dark:hover:bg-blue-900/40 hover:text-blue-700 dark:hover:text-blue-300 transition-colors rounded-md text-base font-semibold touch-manipulation" 
         disabled={loading}
       >
         {loading ? "Sending..." : dict.contact.form.send}
