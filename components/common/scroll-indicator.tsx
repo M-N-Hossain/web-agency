@@ -3,10 +3,9 @@
 export function ScrollIndicator() {
   return (
     <div
-      className="scroll-indicator cursor-pointer hover:scale-[0.5]"
+      className="scroll-indicator cursor-pointer hover:scale-[0.5] sm:hidden "
       style={{
         position: "absolute",
-        bottom: "2rem",
         left: "50%",
         transform: "translateX(-50%)",
         opacity: 1,
