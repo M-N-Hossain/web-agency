@@ -131,46 +131,41 @@ export default function ServiceCardContent({
             </div>
           </div>
           
-          {/* Enhanced CTA Button with entrance animation */}
-          <div className={buildClasses(
-            "transition-all duration-500",
-            isVisible ? styles.animateScaleInEnhanced : "opacity-0 scale-95"
-          )} style={{ animationDelay: `${animationDelay + (variant === 'detailed' || variant === 'premium' ? 1600 : 600)}ms` }}>
-            <Button 
-              asChild 
-              className={buildClasses(
-                "w-full group/btn font-semibold py-2 px-4 rounded-lg transition-all duration-500 relative overflow-hidden",
-                variant === 'premium' ? (
-                  service.popular ? 
-                    "bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 hover:from-blue-700 hover:via-purple-700 hover:to-blue-700 text-white text-base shadow-2xl hover:shadow-3xl transform hover:scale-102" :
-                    "bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white text-base shadow-xl hover:shadow-2xl transform hover:scale-102"
-                  ) :
-                  variant === 'detailed' ? 
-                    "bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white text-base shadow-xl hover:shadow-2xl transform hover:scale-102" :
-                  service.popular ?
-                    "bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white shadow-xl hover:shadow-2xl transform hover:scale-102" :
-                    "bg-blue-600 hover:bg-blue-700 text-white shadow-lg hover:shadow-xl transform hover:scale-102"
-              )}
-            >
-              <Link href="/contact" className="flex items-center justify-center relative z-10">
-                {/* Button overlay animation */}
-                <div className="absolute inset-0 bg-white/20 transform scale-x-0 group-hover/btn:scale-x-100 transition-transform duration-500 origin-left"></div>
-                <span className="relative z-10 flex items-center">
-                  {service.popular && variant === 'premium' ? (
-                    <>
-                      🚀 Get Started Now
-                      <ArrowRight className="ml-2 h-5 w-5 group-hover/btn:translate-x-2 transition-transform duration-300" />
-                    </>
-                  ) : (
-                    <>
-                      Get Started
-                      <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform duration-300" />
-                    </>
-                  )}
-                </span>
-              </Link>
-            </Button>
-          </div>
+          {/* CTA Button */}
+          <Button 
+            asChild 
+            className={buildClasses(
+              "w-full group/btn font-semibold py-2 px-4 rounded-lg transition-all duration-500 relative overflow-hidden",
+              variant === 'premium' ? (
+                service.popular ? 
+                  "bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 hover:from-blue-700 hover:via-purple-700 hover:to-blue-700 text-white text-base shadow-2xl hover:shadow-3xl transform hover:scale-102" :
+                  "bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white text-base shadow-xl hover:shadow-2xl transform hover:scale-102"
+                ) :
+                variant === 'detailed' ? 
+                  "bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white text-base shadow-xl hover:shadow-2xl transform hover:scale-102" :
+                service.popular ?
+                  "bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white shadow-xl hover:shadow-2xl transform hover:scale-102" :
+                  "bg-blue-600 hover:bg-blue-700 text-white shadow-lg hover:shadow-xl transform hover:scale-102"
+            )}
+          >
+            <Link href="/contact" className="flex items-center justify-center relative z-10">
+              {/* Button overlay animation */}
+              <div className="absolute inset-0 bg-white/20 transform scale-x-0 group-hover/btn:scale-x-100 transition-transform duration-500 origin-left"></div>
+              <span className="relative z-10 flex items-center">
+                {service.popular && variant === 'premium' ? (
+                  <>
+                    🚀 Get Started Now
+                    <ArrowRight className="ml-2 h-5 w-5 group-hover/btn:translate-x-2 transition-transform duration-300" />
+                  </>
+                ) : (
+                  <>
+                    Get Started
+                    <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform duration-300" />
+                  </>
+                )}
+              </span>
+            </Link>
+          </Button>
           
           {/* Extra urgency text for popular premium cards */}
           {service.popular && variant === 'premium' && (
