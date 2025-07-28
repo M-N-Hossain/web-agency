@@ -1,7 +1,7 @@
-import Header from "@/components/layout/header"
-import Hero from "@/components/features/hero"
-import ServiceCards from "@/components/features/services/service-cards"
-import Footer from "@/components/layout/footer"
+import Hero from "@/components/features/Hero"
+import ServiceCards from "@/components/features/services/Service-cards"
+import Footer from "@/components/layout/Footer"
+import Header from "@/components/layout/Header"
 import { getDictionary } from "./dictionaries"
 
 export default async function HomePage({

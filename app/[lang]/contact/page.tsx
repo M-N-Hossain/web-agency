@@ -1,7 +1,7 @@
-import ContactForm from "@/components/forms/contact-form"
-import Footer from "@/components/layout/footer"
-import Header from "@/components/layout/header"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import ContactForm from "@/components/forms/Contact-form"
+import Footer from "@/components/layout/Footer"
+import Header from "@/components/layout/Header"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/Card"
 import { Mail, MapPin, Phone } from "lucide-react"
 import { getDictionary } from "../dictionaries"
 

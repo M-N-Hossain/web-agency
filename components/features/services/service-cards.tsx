@@ -1,8 +1,8 @@
 "use client"
 
-import SectionHeader from "@/components/common/section-header"
-import FeaturesSection from "@/components/features/services/features-section"
-import ServiceCard from "@/components/features/services/service-card/service-card"
+import SectionHeader from "@/components/common/Section-header"
+import FeaturesSection from "@/components/features/services/Features-section"
+import ServiceCard from "@/components/features/services/service-card/Service-card"
 import { getFeatures } from "@/lib/data/features"
 import { getServices } from "@/lib/data/services"
 import type { ComponentWithDict } from "@/lib/types"

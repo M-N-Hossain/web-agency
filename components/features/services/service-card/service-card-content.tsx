@@ -1,7 +1,7 @@
 "use client"
 
-import { Button } from "@/components/ui/button"
-import { CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Button } from "@/components/ui/Button"
+import { CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/Card"
 import type { Service } from "@/lib/types"
 import { getIcon } from "@/lib/utils/icon-mapper"
 import { ArrowRight, CheckCircle } from "lucide-react"

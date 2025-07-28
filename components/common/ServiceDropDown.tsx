@@ -1,4 +1,4 @@
-import ServiceCard from "@/components/features/services/service-card/service-card";
+import ServiceCard from "@/components/features/services/service-card/Service-card";
 import { getServices } from "@/lib/data/services";
 import type { ComponentWithDict } from "@/lib/types";
 import Link from "next/link";

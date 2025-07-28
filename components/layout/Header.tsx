@@ -6,8 +6,8 @@ import { ChevronDown, ChevronUp } from "lucide-react"; // Ignoring type checks f
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { LanguageSwitcher } from "./language-switcher";
-import { ThemeToggle } from "./theme-toggle";
+import { LanguageSwitcher } from "./Language-switcher";
+import { ThemeToggle } from "./Theme-toggle";
 
 import type { ComponentWithDict } from "@/lib/types";
 

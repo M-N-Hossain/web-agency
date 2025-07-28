@@ -1,5 +1,5 @@
-import { ScrollIndicator } from "@/components/common/scroll-indicator";
-import { Button } from "@/components/ui/button";
+import { ScrollIndicator } from "@/components/common/Scroll-indicator";
+import { Button } from "@/components/ui/Button";
 import "@/styles/animations.css";
 import Link from "next/link";
 
