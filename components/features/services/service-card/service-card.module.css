@@ -69,6 +69,8 @@
   }
 }
 
+
+
 .animateCardFloat {
   animation: cardFloat 6s ease-in-out infinite;
 }
@@ -99,6 +101,36 @@
 
 .animateScaleInBounce {
   animation: scaleInBounce 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.hoverScale {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translate3d(0, 0, 0);
+}
+
+.hoverScale:hover {
+  transform: scale(1.05) translateY(-8px) rotateX(5deg) rotateY(-2deg);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.hoverScaleCompact {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translate3d(0, 0, 0);
+}
+
+.hoverScaleCompact:hover {
+  transform: scale(1.03) translateY(-4px);
+  box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.hoverScalePremium {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translate3d(0, 0, 0);
+}
+
+.hoverScalePremium:hover {
+  transform: scale(1.08) translateY(-12px) rotateX(8deg) rotateY(-3deg);
+  box-shadow: 0 35px 60px -12px rgba(0, 0, 0, 0.3), 0 25px 30px -5px rgba(0, 0, 0, 0.15);
 }
 
 .card3d {
